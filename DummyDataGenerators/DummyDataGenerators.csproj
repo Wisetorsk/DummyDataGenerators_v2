@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ErrorGenerator\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DummyDataGenerators.DTO\DummyDataGenerators.DTO.csproj" />
+  </ItemGroup>
+
+</Project>
