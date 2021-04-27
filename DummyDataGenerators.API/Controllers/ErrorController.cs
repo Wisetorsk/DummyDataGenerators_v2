@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DummyDataGenerators.DTO;
+using DummyDataGenerators.DTO.DummyErrorDTO;
 using DummyDataGenerators.ErrorGenerator;
 
 namespace DummyDataGenerators.API.Controllers
@@ -14,6 +14,22 @@ namespace DummyDataGenerators.API.Controllers
     public class ErrorController : ControllerBase
     {
         [HttpGet]
-        public DummyError
+        public DummyError Get()
+        {
+            return ErrorStrings.GenerateError();
+        }
+
+        [HttpGet("{number}")]
+        public DummyError[] Get(int number)
+        {
+            var errorArray = new DummyError[number];
+
+            for (int index = 0; index < number; index++)
+            {
+                errorArray[index] = ErrorStrings.GenerateError();
+            }
+
+            return errorArray;
+        }
     }
 }
