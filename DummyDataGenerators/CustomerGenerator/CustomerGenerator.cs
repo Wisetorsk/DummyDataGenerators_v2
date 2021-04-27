@@ -93,7 +93,7 @@ namespace DummyDataGenerators.CustomerGenerator
 
         private string GeneratePasswordHash => Convert.ToBase64String(SHA256.Create().ComputeHash(_dataArray)); // Generates a hash from the byte array
         private Random RNG { get; set; }
-        private Guid GenerateKundeGUID => new();
+        private Guid GenerateKundeGUID => Guid.NewGuid();
         private  string GenerateCustomerName => _customerNames[RNG.Next(_customerNames.Length)];
         private  string GenerateApplicationName => _applicationNames[RNG.Next(_applicationNames.Length)];
         private  string GenerateUserName => _userNames[RNG.Next(_userNames.Length)].Replace(" ", "");
