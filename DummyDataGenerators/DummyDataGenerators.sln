@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DummyDataGenerators.DTO", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DummyDataGenerators.API", "..\DummyDataGenerators.API\DummyDataGenerators.API.csproj", "{63874776-A109-40BB-B507-024DEBE9956E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummeDataGenerators.WebInterface", "..\DummeDataGenerators.WebInterface\DummeDataGenerators.WebInterface.csproj", "{D65B4064-85C8-4F34-A2E0-FDE9089BC382}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyDataGenerators.WebInterface", "..\DummeDataGenerators.WebInterface\DummyDataGenerators.WebInterface.csproj", "{D65B4064-85C8-4F34-A2E0-FDE9089BC382}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
