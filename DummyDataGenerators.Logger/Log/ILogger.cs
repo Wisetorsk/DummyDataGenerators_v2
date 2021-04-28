@@ -15,5 +15,6 @@ namespace DummyDataGenerators.Logger.Log
         string FilePath { get; }
         string FullPath { get; }
         void Log(string data);
+        void LogHttpRequest(HttpRequestData request, int logMode);
     }
 }

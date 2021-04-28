@@ -24,7 +24,7 @@ namespace DummyDataGenerators.API.Controllers
 
         public TransactionController()
         {
-            _generator = new();
+            _generator = new(); 
             _logger = new();
         }
 
@@ -35,6 +35,7 @@ namespace DummyDataGenerators.API.Controllers
             // The Request should maybe be piped into a custom method on the logger that also takes in log mode argument to simplify code in controller...
             if (_logMode == LoggingModes.Full)
             {
+                // Move into Logger. Create Method LogHttpRequest(HttpRequestData(?) request, int logLevel)
                 var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
                 var requestData = Request.HttpContext.Request.Headers.Select(i => i.ToString()).Aggregate((first, last) => first + " " +  last);
                 var msg = new StringBuilder();
