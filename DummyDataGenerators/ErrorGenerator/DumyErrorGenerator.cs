@@ -91,7 +91,7 @@ namespace DummyDataGenerators.ErrorGenerator
         public static DummyError GenerateError()
         {
             return new DummyError {
-                Date = DummyErrorGenerator.Date,
+                Date = Date,
                 ErrorMessage = Message,
                 ErrorCode = EC,
                 Path = Path,

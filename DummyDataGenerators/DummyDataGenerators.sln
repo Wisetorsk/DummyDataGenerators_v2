@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DummyDataGenerators.WebInte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyDataGenerators.Repository", "..\DummyDataGenerators.Repository\DummyDataGenerators.Repository.csproj", "{ADB49350-CC64-4178-A853-3F84A7A095D8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DummyDataGenerators.Logger", "..\DummyDataGenerators.Logger\DummyDataGenerators.Logger.csproj", "{5AC364BD-9B32-4BB3-8D4D-5F2FA080764B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{ADB49350-CC64-4178-A853-3F84A7A095D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADB49350-CC64-4178-A853-3F84A7A095D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADB49350-CC64-4178-A853-3F84A7A095D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AC364BD-9B32-4BB3-8D4D-5F2FA080764B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AC364BD-9B32-4BB3-8D4D-5F2FA080764B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AC364BD-9B32-4BB3-8D4D-5F2FA080764B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AC364BD-9B32-4BB3-8D4D-5F2FA080764B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

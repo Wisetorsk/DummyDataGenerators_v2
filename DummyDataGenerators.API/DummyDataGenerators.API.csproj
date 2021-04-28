@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.HttpOverrides" Version="2.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\DummyDataGenerators.DTO\DummyDataGenerators.DTO.csproj" />
+    <ProjectReference Include="..\DummyDataGenerators.Logger\DummyDataGenerators.Logger.csproj" />
+    <ProjectReference Include="..\DummyDataGenerators.Repository\DummyDataGenerators.Repository.csproj" />
     <ProjectReference Include="..\DummyDataGenerators\DummyDataGenerators.csproj" />
   </ItemGroup>
 
