@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DummyDataGenerators.ErrorGenerator
 {
-    public static class ErrorStrings
+    public static class DummyErrorGenerator
     {
         public static DateTime Start { get; set; } = new DateTime(2019, 1, 1);
         public static int Range { get; set; } = (DateTime.Today - Start).Days;
@@ -91,7 +91,7 @@ namespace DummyDataGenerators.ErrorGenerator
         public static DummyError GenerateError()
         {
             return new DummyError {
-                Date = ErrorStrings.Date,
+                Date = DummyErrorGenerator.Date,
                 ErrorMessage = Message,
                 ErrorCode = EC,
                 Path = Path,

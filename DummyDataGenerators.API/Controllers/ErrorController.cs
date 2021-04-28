@@ -16,17 +16,17 @@ namespace DummyDataGenerators.API.Controllers
         [HttpGet]
         public DummyError Get()
         {
-            return ErrorStrings.GenerateError();
+            return DummyErrorGenerator.GenerateError();
         }
 
-        [HttpGet("{number}")]
-        public DummyError[] Get(int number)
+        [HttpGet("{numberOfErrors}")]
+        public DummyError[] Get(int numberOfErrors)
         {
-            var errorArray = new DummyError[number];
+            var errorArray = new DummyError[numberOfErrors];
 
-            for (int index = 0; index < number; index++)
+            for (int index = 0; index < numberOfErrors; index++)
             {
-                errorArray[index] = ErrorStrings.GenerateError();
+                errorArray[index] = DummyErrorGenerator.GenerateError();
             }
 
             return errorArray;

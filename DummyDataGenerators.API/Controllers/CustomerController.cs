@@ -13,10 +13,10 @@ namespace DummyDataGenerators.API.Controllers
     [ApiController]
     public class CustomerController : ControllerBase
     {
-        private CustomerGenerator.CustomerGenerator _generator;
+        private DummyCustomerGenerator _generator;
         public CustomerController()
         {
-            _generator = new CustomerGenerator.CustomerGenerator();
+            _generator = new DummyCustomerGenerator();
         }
 
         [HttpGet]
@@ -25,12 +25,12 @@ namespace DummyDataGenerators.API.Controllers
             return _generator.Generate();
         }
 
-        [HttpGet("{number}")]
-        public DummyCustomer[] Get(int number)
+        [HttpGet("{numberOfCustomers}")]
+        public DummyCustomer[] Get(int numberOfCustomers)
         {
-            var customerArray = new DummyCustomer[number];
+            var customerArray = new DummyCustomer[numberOfCustomers];
 
-            for (int index = 0; index < number; index++)
+            for (int index = 0; index < numberOfCustomers; index++)
             {
                 customerArray[index] = _generator.Generate();
             }

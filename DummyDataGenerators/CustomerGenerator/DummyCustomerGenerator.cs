@@ -8,7 +8,7 @@ using DummyDataGenerators.DTO.DummyCustomerDTO;
 
 namespace DummyDataGenerators.CustomerGenerator
 {
-    public class CustomerGenerator
+    public class DummyCustomerGenerator
     {
         #region fields
         private  readonly string[] _customerNames = {
@@ -102,7 +102,7 @@ namespace DummyDataGenerators.CustomerGenerator
         private  int GenerateRole => RNG.Next(10);
         #endregion
 
-        public CustomerGenerator()
+        public DummyCustomerGenerator()
         {
             RNG = new Random();
         }

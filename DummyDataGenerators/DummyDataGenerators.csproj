@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ErrorGenerator\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\DummyDataGenerators.DTO\DummyDataGenerators.DTO.csproj" />
   </ItemGroup>
 
