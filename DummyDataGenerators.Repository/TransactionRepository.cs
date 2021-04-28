@@ -2,7 +2,7 @@
 
 namespace DummyDataGenerators.Repository
 {
-    public class Class1
+    public class TransactionRepository
     {
     }
 }
