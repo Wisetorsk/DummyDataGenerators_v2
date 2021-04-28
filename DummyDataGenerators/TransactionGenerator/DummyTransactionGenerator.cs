@@ -78,7 +78,7 @@ namespace DummyDataGenerators.TransactionGenerator
 
         #endregion
 
-
+        private DateTime _start;
         private Random RNG { get; set; }
         public int TransactionID => RNG.Next(999999999);
         public string CustomerName => _customerNames[RNG.Next(_customerNames.Length)];
@@ -87,11 +87,12 @@ namespace DummyDataGenerators.TransactionGenerator
         public string TransactionData => _dataExamples[RNG.Next(_dataExamples.Length)];
         public string Application => _applicationNames[RNG.Next(_applicationNames.Length)];
 
-        public DateTime Date => new DateTime(2010, 1, 1).AddYears(RNG.Next(11)).AddMonths(12).AddMinutes(60).AddSeconds(60);
+        public DateTime Date => _start.AddDays(RNG.Next((DateTime.Today - _start).Days)).AddHours(RNG.Next(24)).AddMinutes(RNG.Next(60)).AddSeconds(RNG.Next(60));
 
 
         public DummyTransactionGenerator()
         {
+            _start = new DateTime(2018, 1, 1);
             RNG = new Random();
         }
 
