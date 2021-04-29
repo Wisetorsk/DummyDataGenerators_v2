@@ -14,7 +14,7 @@ namespace DummyDataGenerators.DTO.DummyErrorDTO
         public string OS { get; set; }
         public Severity ErrorSeverity { get; set; }
         public string ErrorCode { get; set; }
-        public int[] IP { get; set; }
+        public string IP { get; set; }
         public string Comment { get; set; }
     }
 }

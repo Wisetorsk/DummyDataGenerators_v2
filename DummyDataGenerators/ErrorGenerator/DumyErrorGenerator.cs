@@ -85,7 +85,7 @@ namespace DummyDataGenerators.ErrorGenerator
         public static DateTime Date => Start.AddDays(Rng.Next(Range)).AddHours(Rng.Next(0, 24)).AddMinutes(Rng.Next(0, 60)).AddSeconds(Rng.Next(0, 60));
         public static int HTMLError => _htmlEC[Rng.Next(_htmlEC.Length)];
         public static string EC => BitConverter.ToString(_codeArray).Replace("-", ".");
-        public static int Severity => Rng.Next(5);
+        public static int Severity => Rng.Next(1, 5);
         public static int ErrorNumber = 0; //Increment if needed
 
         public static DummyError GenerateError()
@@ -97,7 +97,7 @@ namespace DummyDataGenerators.ErrorGenerator
                 Path = Path,
                 OS = OS,
                 ErrorSeverity = (Severity)Severity,
-                IP = IP,
+                IP = RandIP,
                 Comment = Comment
             };
         }

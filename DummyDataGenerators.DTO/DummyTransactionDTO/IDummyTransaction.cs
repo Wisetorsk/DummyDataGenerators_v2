@@ -8,7 +8,7 @@ namespace DummyDataGenerators.DTO.DummyTransactionDTO
 {
     public interface IDummyTransaction
     {
-        int Id { get; set; }
+        string Id { get; set; }
         string Kundenavn { get; set; }
         string Bruker { get; set; }
         string Type { get; set; }

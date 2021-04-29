@@ -80,7 +80,7 @@ namespace DummyDataGenerators.TransactionGenerator
 
         private DateTime _start;
         private Random RNG { get; set; }
-        public int TransactionID => RNG.Next(999999999);
+        public string TransactionID => RNG.Next(999999999).ToString("D9");
         public string CustomerName => _customerNames[RNG.Next(_customerNames.Length)];
         public string UserName => _userNames[RNG.Next(_userNames.Length)];
         public string TransactionType => _transactionTypes[RNG.Next(_transactionTypes.Length)];
