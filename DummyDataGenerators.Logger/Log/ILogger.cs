@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace DummyDataGenerators.Logger.Log
 {
@@ -15,6 +16,6 @@ namespace DummyDataGenerators.Logger.Log
         string FilePath { get; }
         string FullPath { get; }
         void Log(string data);
-        void LogHttpRequest(HttpRequestData request, int logMode);
+        void LogHttpRequest(HttpRequest request, string additionalInformation, int logMode, string response = null);
     }
 }

@@ -18,9 +18,9 @@ namespace DummyDataGenerators.API.Controllers
     [ApiController]
     public class TransactionController : ControllerBase
     {
-        private LoggingModes _logMode = (LoggingModes)int.Parse(ConfigurationManager.AppSettings["logMode"]);
-        private DummyTransactionGenerator _generator;
-        private DataLogger _logger;
+        private readonly LoggingModes _logMode = (LoggingModes)int.Parse(ConfigurationManager.AppSettings["logMode"]);
+        private readonly DummyTransactionGenerator _generator;
+        private readonly DataLogger _logger;
 
         public TransactionController()
         {
@@ -33,24 +33,7 @@ namespace DummyDataGenerators.API.Controllers
         {
             var response = _generator.Generate();
             // The Request should maybe be piped into a custom method on the logger that also takes in log mode argument to simplify code in controller...
-            if (_logMode == LoggingModes.Full)
-            {
-                // Move into Logger. Create Method LogHttpRequest(HttpRequestData(?) request, int logLevel)
-                var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
-                var requestData = Request.HttpContext.Request.Headers.Select(i => i.ToString()).Aggregate((first, last) => first + " " +  last);
-                var msg = new StringBuilder();
-                msg.AppendLine("Request from: " + remoteIpAddress);
-                msg.AppendLine("\nRequest Data: " + requestData);
-                msg.AppendLine("\nResponse: " + response);
-                _logger.Log(msg.ToString());
-            } else if (_logMode == LoggingModes.Partial)
-            {
-                var remoteIpAddress = Request.HttpContext.Connection.RemoteIpAddress.ToString();
-                var msg = new StringBuilder();
-                msg.AppendLine("Request from: " + remoteIpAddress);
-                msg.AppendLine("Response: " + response);
-                _logger.Log(msg.ToString());
-            }
+            _logger.LogHttpRequest(Request, "Single Request", (int)_logMode);
             return response;
         }
 
@@ -58,6 +41,7 @@ namespace DummyDataGenerators.API.Controllers
         public DummyTransaction[] Get(int numberOfTransactions)
         {
             var transactions = new DummyTransaction[numberOfTransactions];
+            _logger.LogHttpRequest(Request, $"Multiple Requests: {numberOfTransactions}", (int)_logMode);
             for (int index = 0; index < numberOfTransactions; index++)
             {
                 transactions[index] = _generator.Generate();
