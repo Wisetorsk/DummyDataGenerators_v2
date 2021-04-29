@@ -9,7 +9,6 @@ using DummyDataGenerators.DTO.DummyTransactionDTO;
 using DummyDataGenerators.Logger.Log;
 using System.Configuration;
 using System.Text;
-using System.Linq;
 
 namespace DummyDataGenerators.API.Controllers
 {
