@@ -8,7 +8,7 @@ using DummyDataGenerators.DTO.DummyCustomerDTO;
 
 namespace DummyDataGenerators.CustomerGenerator
 {
-    public class DummyCustomerGenerator
+    public class DummyCustomerGenerator : IGenerator<DummyCustomer>
     {
         #region fields
         private  readonly string[] _customerNames = {

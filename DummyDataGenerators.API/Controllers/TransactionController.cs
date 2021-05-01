@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using DummyDataGenerators.TransactionGenerator;
 using DummyDataGenerators.DTO.DummyTransactionDTO;
 using DummyDataGenerators.Logger.Log;
+using DummyDataGenerators.Repository;
 using System.Configuration;
 using System.Text;
 
@@ -18,19 +19,19 @@ namespace DummyDataGenerators.API.Controllers
     public class TransactionController : ControllerBase
     {
         private readonly LoggingModes _logMode = (LoggingModes)int.Parse(ConfigurationManager.AppSettings["logMode"]);
-        private readonly DummyTransactionGenerator _generator;
+        private readonly IRepository<DummyTransaction> _repository;
         private readonly DataLogger _logger;
 
         public TransactionController()
         {
-            _generator = new(); 
+            _repository = new TransactionRepository(); 
             _logger = new();
         }
 
         [HttpGet]
         public DummyTransaction Get()
         {
-            var response = _generator.Generate();
+            var response = _repository.GetSingleDataset();
             // The Request should maybe be piped into a custom method on the logger that also takes in log mode argument to simplify code in controller...
             _logger.LogHttpRequest(Request, "Single Request", (int)_logMode);
             return response;
@@ -43,7 +44,7 @@ namespace DummyDataGenerators.API.Controllers
             _logger.LogHttpRequest(Request, $"Multiple Requests: {numberOfTransactions}", (int)_logMode);
             for (int index = 0; index < numberOfTransactions; index++)
             {
-                transactions[index] = _generator.Generate();
+                transactions[index] = _repository.GetSingleDataset();
             }
             return transactions;
         }

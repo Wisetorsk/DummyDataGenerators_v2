@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DummyDataGenerators
 {
-    interface IGenerator
+    public interface IGenerator<T>
     {
+        public T Generate();
     }
 }

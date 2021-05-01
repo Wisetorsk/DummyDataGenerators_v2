@@ -7,7 +7,7 @@ using DummyDataGenerators.DTO.DummyErrorDTO;
 
 namespace DummyDataGenerators.ErrorGenerator
 {
-    public class DummyErrorGenerator_V2
+    public class DummyErrorGenerator_V2 : IGenerator<ErrorData>
     {
 
         private DateTime _start = new DateTime(2020, 1, 1);

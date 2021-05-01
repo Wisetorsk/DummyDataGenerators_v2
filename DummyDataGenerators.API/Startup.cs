@@ -44,6 +44,8 @@ namespace DummyDataGenerators.API
                     });
             });
 
+            //services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings")); // deprecated?
+            //services.Configure<TableNames>(Configuration.GetSection("TableNames"));
 
             services.AddHttpsRedirection(options =>
             {

@@ -4,4 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DummyDataGenerators.DTO\DummyDataGenerators.DTO.csproj" />
+    <ProjectReference Include="..\DummyDataGenerators\DummyDataGenerators.csproj" />
+  </ItemGroup>
+
 </Project>

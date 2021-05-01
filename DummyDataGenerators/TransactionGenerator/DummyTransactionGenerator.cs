@@ -7,7 +7,7 @@ using DummyDataGenerators.DTO.DummyTransactionDTO;
 
 namespace DummyDataGenerators.TransactionGenerator
 {
-    public class DummyTransactionGenerator
+    public class DummyTransactionGenerator : IGenerator<DummyTransaction>
     {
         #region fields
 
