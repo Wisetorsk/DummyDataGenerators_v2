@@ -1,3 +1,5 @@
+using DummyDataGenerators.DTO.DummyCustomerDTO;
+using DummyDataGenerators.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -46,7 +48,7 @@ namespace DummyDataGenerators.API
 
             //services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings")); // deprecated?
             //services.Configure<TableNames>(Configuration.GetSection("TableNames"));
-
+            //services.AddScoped<IRepository>();
             services.AddHttpsRedirection(options =>
             {
                 options.RedirectStatusCode = StatusCodes.Status308PermanentRedirect;

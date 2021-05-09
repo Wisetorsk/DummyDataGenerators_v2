@@ -4,4 +4,40 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<ComponentWithInputs ApiUrl="Dette skal være en url" Arguments="@arg" Class="" Visible="@currentUser.visible.Inputfield"/>
+
+
+
+@code {
+    public Dictionary<string, object> arg = new Dictionary<string, object>()
+    {
+        { "Ett tall", 100 },
+        { "en string", "string" }
+    };
+
+    public User currentUser = new User();
+
+    protected override void OnInitialized()
+    {
+
+        currentUser.visible.Inputfield = true;
+        StateHasChanged();
+    }
+
+
+    public class User
+    {
+
+        public Visible visible { get; set; }
+        public User()
+        {
+            visible = new();
+        }
+
+        public class Visible
+        {
+            public bool Inputfield { get; set; } = false;
+        }
+    }
+
+}

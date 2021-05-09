@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DummyDataGenerators.DTO.DummyErrorDTO
 {
-    public class ErrorData
+    public class ErrorData : DTOBase
     {
         public Guid ID { get; set; }
         public string Kundenavn { get; set; }
         public string Type { get; set; }
-        public DateTime Dato { get; set; }
+        public DateTime Date { get; set; }
         public string Bruker { get; set; }
         public string Data { get; set; }
         public Severity AlvorlighetsGrad { get; set; }

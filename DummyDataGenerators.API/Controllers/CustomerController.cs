@@ -59,7 +59,7 @@ namespace DummyDataGenerators.API.Controllers
             {
                 Console.WriteLine(e.Message);
                 return BadRequest((int)CustomErrorCodes.MARIUS_DID_A_BOO_BOO + "\t" +  e.Message);
-                throw (e);
+                //throw (e);
             }
             
         }
