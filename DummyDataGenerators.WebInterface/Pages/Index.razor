@@ -4,7 +4,7 @@
 
 Welcome to your new app.
 
-<ComponentWithInputs ApiUrl="Dette skal være en url" Arguments="@arg" Class="" Visible="@currentUser.visible.Inputfield"/>
+<ComponentWithInputs ApiUrl="Dette skal være en url" Arguments="@arg" Class="" Visible="@currentUser.Visibilities.Inputfield"/>
 
 
 
@@ -20,24 +20,11 @@ Welcome to your new app.
     protected override void OnInitialized()
     {
 
-        currentUser.visible.Inputfield = true;
+        currentUser.Visibilities.Inputfield = true;
         StateHasChanged();
     }
 
 
-    public class User
-    {
-
-        public Visible visible { get; set; }
-        public User()
-        {
-            visible = new();
-        }
-
-        public class Visible
-        {
-            public bool Inputfield { get; set; } = false;
-        }
-    }
+    
 
 }
