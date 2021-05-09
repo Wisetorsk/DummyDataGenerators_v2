@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DummyDataGenerators.Common\DummyDataGenerators.Common.csproj" />
     <ProjectReference Include="..\DummyDataGenerators.DTO\DummyDataGenerators.DTO.csproj" />
     <ProjectReference Include="..\DummyDataGenerators.Logger\DummyDataGenerators.Logger.csproj" />
     <ProjectReference Include="..\DummyDataGenerators.Repository\DummyDataGenerators.Repository.csproj" />

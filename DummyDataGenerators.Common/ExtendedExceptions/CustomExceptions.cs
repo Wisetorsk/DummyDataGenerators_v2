@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DummyDataGenerators.Common.ExtendedExceptions
 {
-    class YouDoneGoofedException : Exception 
+    public class YouDoneGoofedException : Exception 
     {
         public YouDoneGoofedException(string message) : base (Oof(message))
         {
@@ -20,9 +20,9 @@ namespace DummyDataGenerators.Common.ExtendedExceptions
     }
 
 
-    class BooBooError : Exception
+    public class BooBooError : Exception
     {
-        public BooBooError(string message) : base (IdidA(message))
+        public BooBooError(string message) : base(IdidA(message))
         {
 
         }
@@ -31,12 +31,12 @@ namespace DummyDataGenerators.Common.ExtendedExceptions
         {
             return "Marius did a boo boo...\n" + original;
         }
+        
     }
 
-
-    public enum CustomErrorCodes 
+    public enum CustomErrorCodes
     {
-        MARIUS_DID_A_BOO_BOO = 542,
+        MARIUS_DID_A_BOO_BOO = 442,
         YOU_DONE_GOOFED = 469
     }
 }

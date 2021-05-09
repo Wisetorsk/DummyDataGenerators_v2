@@ -9,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DummyDataGenerators.Common.ExtendedExceptions;
+using System.Net;
 
 namespace DummyDataGenerators.API.Controllers
 {
@@ -35,17 +37,31 @@ namespace DummyDataGenerators.API.Controllers
         }
 
         [HttpGet("{numberOfCustomers}")]
-        public DummyCustomer[] Get(int numberOfCustomers)
+        public ActionResult<DummyCustomer[]> Get(int numberOfCustomers)
         {
-            var customerArray = new DummyCustomer[numberOfCustomers];
-            _logger.LogHttpRequest(Request, $"Multiple Requests: {numberOfCustomers}", (int)_logMode);
-
-            for (int index = 0; index < numberOfCustomers; index++)
+            try
             {
-                customerArray[index] = _repository.GetSingleDataset();
-            }
+                if (numberOfCustomers > 100)
+                {
+                    throw new BooBooError("Client requested too many customer entities");
+                }
+                var customerArray = new DummyCustomer[numberOfCustomers];
+                _logger.LogHttpRequest(Request, $"Multiple Requests: {numberOfCustomers}", (int)_logMode);
 
-            return customerArray;
+                for (int index = 0; index < numberOfCustomers; index++)
+                {
+                    customerArray[index] = _repository.GetSingleDataset();
+                }
+
+                return customerArray;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return BadRequest((int)CustomErrorCodes.MARIUS_DID_A_BOO_BOO + "\t" +  e.Message);
+                throw (e);
+            }
+            
         }
 
         [HttpPost]
